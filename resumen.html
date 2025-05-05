@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panadería Delicia - Los mejores panes y pasteles artesanales">
+    <meta name="keywords" content="panadería, pasteles, pan artesanal, empanadas, bizcochos">
+    <title>Inicio - Panadería Delicia</title>
+    <link rel="stylesheet" href="styles_index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Barra superior con logo y navegación -->
+    <header class="barra-superior">
+        <div class="nombre-negocio">Panadería Delicia</div>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+            <a href="productos.html"><i class="fas fa-bread-slice"></i> Productos</a>
+            <a href="#pedidos"><i class="fas fa-shopping-cart"></i> Pedidos</a>
+        </nav>
+        <div class="user-auth">
+            <button id="login-btn" class="auth-btn"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+            <button id="register-btn" class="auth-btn"><i class="fas fa-user-plus"></i> Registrarse</button>
+            <span id="user-greeting" style="display:none;"></span>
+            <button id="logout-btn" class="auth-btn" style="display:none;"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </div>
+    </header>
+
+        <!-- Sistema de autenticación -->
+    <div class="auth-container">
+        <div id="user-greeting" style="display: none;"></div>
+        <button id="login-btn" class="auth-btn">Iniciar Sesión</button>
+        <button id="register-btn" class="auth-btn">Registrarse</button>
+        <button id="logout-btn" class="auth-btn" style="display: none;">Cerrar Sesión</button>
+    </div>
+
+    <!-- Modales -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="auth-forms">
+                <!-- Forms de login/registro aquí -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Panadería Delicia</h3>
+                    <p>El sabor tradicional que tu familia merece.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="#pedidos">Pedidos</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Panadería 123, Ciudad</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@panaderiadelicia.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Suscríbete para recibir promociones</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Panadería Delicia. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="funciones_index.js"></script>
+</body>
+</html>

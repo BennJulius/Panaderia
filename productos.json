@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nombre": "Empanadas de Pollo",
+        "precio": 5.00,
+        "categoria": "Empanadas",
+        "descripcion": "¡Saborea el placer de cada bocado con nuestras irresistibles empanadas de pollo!",
+        "ingredientes": "Masa de harina de trigo o maiz, rellena de carne, pollo o queso.Se hornean o se frien."
+    },
+    {
+        "id": 2,
+        "nombre": "Bizcochos de vainilla",
+        "precio": 12.00,
+        "categoria": "Bizcochos",
+        "descripcion": "Suaves, esponjosos y llenos de un aroma irresistible.",
+        "ingredientes": "Pastelitos esponjosos con sabor a vainilla, ideales para acompañar el cafe o decorar."
+    },
+    {
+        "id": 3,
+        "nombre": "Pastel de chocolate",
+        "precio": 20.00,
+        "categoria": "Pasteles",
+        "descripcion": "Intenso, húmedo y lleno de sabor. ¡Cada bocado es una explosión de dulzura!",
+        "ingredientes": "Postre suave y húmedo con intenso sabor a chocolate. Perfecto para celebraciones."
+    },
+    {
+        "id": 4,
+        "nombre": "Pay de Manzana",
+        "precio": 10.00,
+        "categoria": "Pays",
+        "descripcion": "Crujiente, dulce y lleno de frescura...",
+        "ingredientes": "Tarta crujiente rellena de manzanas con azúcar y canela. Tradicional y casera."
+    },
+    {
+        "id": 5,
+        "nombre": "Pan Frances",
+        "precio": 2.00,
+        "categoria": "Panes",
+        "descripcion": "Dorado, crujiente y perfectamente ligero. ¡Ideal para comenzar el dia!",
+        "ingredientes": "Rebanadas de pan bañadas en huevo y leche, doradas en sartén. Se sirven dulces."
+    }
+]

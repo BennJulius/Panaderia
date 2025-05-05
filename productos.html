@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panadería Delicia - Los mejores panes y pasteles artesanales">
+    <meta name="keywords" content="panadería, pasteles, pan artesanal, empanadas, bizcochos">
+    <title>Productos Destacados - Panadería Delicia</title>
+    <link rel="icon" href="imagenes/favicon.ico">
+    <link rel="stylesheet" href="styles_productos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <header class="barra-superior">
+        <div class="nombre-negocio">Panadería Delicia</div>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+            <a href="productos.html" class="active"><i class="fas fa-bread-slice"></i> Productos</a>
+            <a href="#pedidos"><i class="fas fa-shopping-cart"></i> Pedidos</a>
+            <a href="#carrito" id="carrito-icono"><i class="fas fa-shopping-basket"></i> <span id="contador-carrito">0</span></a>
+        </nav>
+        <div class="user-auth">
+            <button id="login-btn" class="auth-btn"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+            <button id="register-btn" class="auth-btn"><i class="fas fa-user-plus"></i> Registrarse</button>
+            <span id="user-greeting" style="display:none;"></span>
+            <button id="logout-btn" class="auth-btn" style="display:none;"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </div>
+    </header>
+    
+    <!-- Contenido principal -->
+    <main class="productos-container">
+        <h1 class="titulo-seccion">Nuestros panes y pasteles son de calidad y muy deliciosos</h1>
+        <p class="subtitulo">Calidad y sabor artesanal en cada producto</p>
+        
+        <!-- Filtros -->
+        <div class="filtros-categorias">
+            <button class="filtro-btn" data-categoria="todos">Todos</button>
+            <button class="filtro-btn" data-categoria="empanadas">Empanadas</button>
+            <button class="filtro-btn" data-categoria="bizcochos">Bizcochos</button>
+            <button class="filtro-btn" data-categoria="pasteles">Pasteles</button>
+            <button class="filtro-btn" data-categoria="pays">Pays</button>
+            <button class="filtro-btn" data-categoria="panes">Panes</button>
+        </div>
+        
+        <!-- Grid de productos (se llena dinámicamente con JS) -->
+        <div class="grid-productos" id="grid-productos">
+            <!-- Los productos se insertan aquí desde JavaScript -->
+        </div>
+    </main>
+
+    <!-- Carrito de compras -->
+    <aside class="carrito-container" id="carrito">
+        <h2><i class="fas fa-shopping-basket"></i> Carrito de Compras</h2>
+        <div id="carrito-vacio">Tu carrito está vacío</div>
+        <ul id="carrito-lista"></ul>
+        <div class="carrito-total-container">
+            <p id="carrito-total">Total: $0.00</p>
+            <button id="vaciar-carrito" class="carrito-btn">Vaciar Carrito</button>
+            <button id="comprar-ahora" class="carrito-btn principal" onclick="window.location.href='checkout.html'">Comprar Ahora</button>
+        </div>
+    </aside>
+
+        <!-- Modal Producto -->
+        <div id="modalProducto" class="modal">
+            <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <div class="modal-imagen">
+                <img id="imagenPrincipal" src="" alt="Producto" class="imagen-principal">
+            </div>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalDescripcion"></p>
+            <p class="precio">Precio: S/ <span id="modalPrecio"></span></p>
+            <h3>Ingredientes:</h3>
+            <ul id="modalIngredientes"></ul>
+        
+            <div class="carrusel">
+                <div id="carruselMiniaturas" class="miniaturas"></div>
+            </div>
+            </div>
+        </div>
+    
+        <!-- Modal de Inicio de Sesión -->
+        <div id="login-modal" class="auth-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Iniciar Sesión</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Correo Electrónico</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn-primario">Ingresar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal de Registro -->
+        <div id="register-modal" class="auth-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Registrarse</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Nombre Completo</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Correo Electrónico</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-phone">Teléfono</label>
+                        <input type="tel" id="register-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-address">Dirección (opcional)</label>
+                        <input type="text" id="register-address">
+                    </div>
+                    <button type="submit" class="btn-primario">Registrarse</button>
+                </form>
+            </div>
+        </div>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Panadería Delicia</h3>
+                    <p>El sabor tradicional que tu familia merece.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="#pedidos">Pedidos</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Panadería 123, Ciudad</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@panaderiadelicia.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Suscríbete para recibir promociones</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Panadería Delicia. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="funciones_productos.js"></script>
+</body>
+</html>
